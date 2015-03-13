@@ -12,7 +12,7 @@
 	{
 		// ------- Private vars -------
 
-		private const DATA_TARGET:String = "txt/ImageData.txt";
+		private const DATA_TARGET:String = "../src/AscIIArt/txt/ImageData.txt";
 		private var _imageInfoLoader:URLLoader;
 		private var _imageStack:Array;
 		private var _currentImageIndex:uint;
@@ -24,7 +24,7 @@
 		{
 			_imageStack = new Array();
 			var request:URLRequest = new URLRequest(DATA_TARGET);
-			_imageInfoLoader = new URLLoader();
+			_imageInfoLoader = new URLLoader(request);
 			_imageInfoLoader.addEventListener(Event.COMPLETE, imageInfoCompleteHandler);
 			_imageInfoLoader.load(request);
 		}
@@ -32,7 +32,7 @@
 		
 		// ------- Public Properties -------
 
-		public static const IMAGE_PATH:String = "image/";
+		public static const IMAGE_PATH:String = "../src/AscIIArt/image/";
 		
 		public var asciiArtText:String = "";
 		
